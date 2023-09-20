@@ -1,7 +1,5 @@
 import 'dart:collection';
 
-import 'package:flutter/widgets.dart';
-
 import '../../get.dart';
 
 class RouterReportManager<T> {
@@ -52,9 +50,9 @@ class RouterReportManager<T> {
 
   void reportRouteDispose(T disposed) {
     if (Get.smartManagement != SmartManagement.onlyBuilder) {
-      ambiguate(WidgetsBinding.instance)!.addPostFrameCallback((_) {
-        _removeDependencyByRoute(disposed);
-      });
+      // ambiguate(WidgetsBinding.instance)!.addPostFrameCallback((_) {
+      _removeDependencyByRoute(disposed);
+      // });
     }
   }
 

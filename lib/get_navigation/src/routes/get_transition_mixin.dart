@@ -14,11 +14,11 @@ const double _kMinFlingVelocity = 1; // Screen widths per second.
 
 // An eyeballed value for the maximum time it takes for a page to animate
 // forward if the user releases a page mid swipe.
-const int _kMaxMidSwipePageForwardAnimationTime = 800; // Milliseconds.
+const int _kMaxMidSwipePageForwardAnimationTime = 400; // Milliseconds.
 
 // The maximum time for a page to get reset to it's original position if the
 // user releases a page mid swipe.
-const int _kMaxPageBackAnimationTime = 300; // Milliseconds.
+const int _kMaxPageBackAnimationTime = 250; // Milliseconds.
 
 class GetBackGestureDetector<T> extends StatefulWidget {
   const GetBackGestureDetector({
@@ -187,8 +187,7 @@ class GetBackGestureController<T> {
       // We want to cap the animation time, but we want to use a linear curve
       // to determine it.
       final droppedPageForwardAnimationTime = min(
-        lerpDouble(
-                _kMaxMidSwipePageForwardAnimationTime, 0, controller.value)!
+        lerpDouble(_kMaxMidSwipePageForwardAnimationTime, 0, controller.value)!
             .floor(),
         _kMaxPageBackAnimationTime,
       );

@@ -11,12 +11,12 @@ import 'default_transitions.dart';
 
 const double _kBackGestureWidth = 20.0;
 const int _kMaxDroppedSwipePageForwardAnimationTime =
-    800; // Screen widths per second.
+    400; // Screen widths per second.
 
 // An eyeballed value for the maximum time it takes
 //for a page to animate forward
 // if the user releases a page mid swipe.
-const int _kMaxPageBackAnimationTime = 300; // Milliseconds.
+const int _kMaxPageBackAnimationTime = 250; // Milliseconds.
 
 // The maximum time for a page to get reset to it's original position if the
 // user releases a page mid swipe.

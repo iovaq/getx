@@ -1,7 +1,7 @@
 // ignore: prefer_mixin
 import 'package:flutter/widgets.dart';
-import '../../../instance_manager.dart';
 
+import '../../../instance_manager.dart';
 import '../rx_flutter/rx_disposable.dart';
 import '../rx_flutter/rx_notifier.dart';
 import 'list_notifier.dart';
@@ -87,13 +87,13 @@ mixin FullLifeCycleMixin on FullLifeCycleController {
   @override
   void onInit() {
     super.onInit();
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @mustCallSuper
   @override
   void onClose() {
-    WidgetsBinding.instance!.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     super.onClose();
   }
 
@@ -107,6 +107,7 @@ mixin FullLifeCycleMixin on FullLifeCycleController {
       case AppLifecycleState.inactive:
         onInactive();
         break;
+      case AppLifecycleState.hidden:
       case AppLifecycleState.paused:
         onPaused();
         break;
